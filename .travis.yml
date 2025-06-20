@@ -1,9 +1,5 @@
 language: python
-python:
-  - "3.10"
-  
 install:
-  - pip install -r requirements.txt
-  
+ - pip3 install flask
 script:
-  - python app.py
+ - python3 ./flaskapp/some_app.py 
