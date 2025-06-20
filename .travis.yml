@@ -1,4 +1,7 @@
 language: python
+
+python:
+- "2.8"
 install:
 - pip3 install flask
 script:
