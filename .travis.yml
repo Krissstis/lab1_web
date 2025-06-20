@@ -1,5 +1,22 @@
-language: python
-install:
- - pip3 install flask
-script:
- - python3 ./flaskapp/some_app.py 
+language: python  
+python:  
+  - "3.8"  
+  - "3.9"  
+  - "3.10"  
+
+install:  
+  - pip install -r requirements.txt  
+  - pip install pytest pytest-cov  # если используете тесты  
+
+script:  
+  - pytest --cov=./  # если есть тесты  
+  # или просто проверка запуска (если тестов нет):  
+  - python -c "from app import app; print('App imported successfully')"  
+
+# Развертывание (опционально, например, на Heroku)  
+deploy:  
+  provider: heroku  
+  api_key: $HEROKU_API_KEY  
+  app: your-heroku-app-name  
+  on:  
+    branch: main  
