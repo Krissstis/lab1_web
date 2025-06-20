@@ -1,8 +1,5 @@
 language: python
-
-python:
-- "2.8"
 install:
-- pip3 install flask
+ - pip3 install flask
 script:
-- python3 ./flaskapp/some_app.py
+ - python3 ./flaskapp/some_app.py
