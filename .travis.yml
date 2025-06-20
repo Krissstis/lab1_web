@@ -1,14 +1,5 @@
-language: python  
-python:  
-  - "3.8"  
-  - "3.9"  
-  - "3.10"  
-
-install:  
-  - pip install -r requirements.txt  # если есть зависимости  
-  - pip install pytest pytest-cov    # для тестов (опционально)  
-
-script:  
-  - pytest --cov=./                 # запуск тестов  
-  # Или просто проверка синтаксиса:  
-  - python -c "print('Hello, Travis CI!')"  
+language: python
+install:
+ - pip3 install flask
+script:
+ - python3 ./flaskapp/some_app.py 
